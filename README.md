@@ -14,12 +14,12 @@ I used a multi-tool approach to handle the data lifecycle:
 
 📈 Project Workflow
 1. Data Cleaning (SQL): Handled the store_item_demand dataset to ensure item_id and store_id consistency.
-(Data cleaning and integrity checks were performed using SQL Server. You can find the scripts in the /sql folder)
-2. Exploratory Analysis (Python): Identified that sales peak during weekends and have a strong yearly seasonality in July.
+Step 1: Data Audit - Verified zero nulls/duplicates. 
+3. Exploratory Analysis (Python): Identified that sales peak during weekends and have a strong yearly seasonality in July.
 
-3. Sales Forecasting: Developed a model to predict demand for the next 6 months.
+4. Sales Forecasting: Developed a model to predict demand for the next 6 months.
 
-4. Financial Impact: Calculated potential savings by comparing current stock levels vs. optimized forecast levels.
+5. Financial Impact: Calculated potential savings by comparing current stock levels vs. optimized forecast levels.
 
 🔑 Key Variables (English Nomenclature)
 sales_qty: Number of units sold.
