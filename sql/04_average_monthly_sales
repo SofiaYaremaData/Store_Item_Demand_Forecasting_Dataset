@@ -1,0 +1,9 @@
+WITH monthly_totals AS (
+    SELECT 
+        reporting_month, 
+        SUM(total_monthly_sales) AS global_sales
+    FROM monthly_store_performance
+    GROUP BY reporting_month
+)
+SELECT AVG(global_sales) AS average_monthly_sales
+FROM monthly_totals;
