@@ -1,0 +1,7 @@
+-- Which months have the highest demand across all stores?
+SELECT 
+    reporting_month, 
+    SUM(total_monthly_sales) AS global_sales
+FROM monthly_store_performance
+GROUP BY reporting_month
+ORDER BY global_sales DESC;
