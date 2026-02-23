@@ -14,7 +14,6 @@ I used a multi-tool approach to handle the data lifecycle:
 
 📈 Project Workflow
 1. Data Cleaning (SQL): Handled the store_item_demand dataset to ensure item_id and store_id consistency.
-Data cleaning and integrity checks were performed using SQL Server. You can find the scripts in the /sql folder.
 
 3. Exploratory Analysis (Python): Identified that sales peak during weekends and have a strong yearly seasonality in July.
 
@@ -28,6 +27,10 @@ sales_qty: Number of units sold.
 forecast_demand: Predicted units for future periods.
 
 inventory_cost: Cost of holding unsold items.
+
+
+Step 1: Data cleaning and integrity checks were performed using SQL Server. You can find the scripts in the /sql folder.
+Step 2: Monthly Aggregations - Created SQL views to summarize daily data into monthly trends for easier analysis
 
 stockout_risk: Probability of running out of items.
 
