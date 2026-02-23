@@ -1,0 +1,16 @@
+-- Create a summary view for monthly performance
+
+CREATE VIEW monthly_store_performance AS
+SELECT 
+    store_id,
+    item_id,
+    FORMAT(date, 'yyyy-MM') AS reporting_month,
+    SUM(sales) AS total_monthly_sales,
+    AVG(sales) AS avg_daily_sales
+FROM raw_sales_data
+GROUP BY store_id, item_id, FORMAT(date, 'yyyy-MM')
+GO
+
+----- To see results, run this in a NEW query window:
+
+SELECT TOP 10 * FROM monthly_store_performance;
