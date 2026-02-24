@@ -28,9 +28,28 @@ forecast_demand: Predicted units for future periods.
 
 inventory_cost: Cost of holding unsold items.
 
-
-Step 1: Data cleaning and integrity checks were performed using SQL Server. You can find the scripts in the /sql folder.
-Step 2: Monthly Aggregations - Created SQL views to summarize daily data into monthly trends for easier analysis
-
 stockout_risk: Probability of running out of items.
+
+
+
+
+
+## 🔍 Phase 1: Data Audit & Insights (SQL)
+
+### Data Quality Check
+Before the analysis, a **Data Integrity Audit** was performed using **MS SQL Server**. 
+* **Nulls & Duplicates:** Verified 0 null values and 0 duplicate records across `date`, `store_id`, and `item_id`.
+* **Consistency:** Confirmed that all 10 stores have continuous daily records for the 5-year period.
+* [View Data Audit Script](./sql/01_data_audit.sql)
+
+### Key Business Discovery: Seasonal Demand Patterns
+Through monthly aggregations in SQL, I identified a consistent **demand spike every March**.
+* **Insight:** Sales in March are approximately **43.6% higher** than the monthly average (**2.22M**), representing the most critical peak for the supply chain.
+* **Trend:** Confirmed a **4.18% Year-over-Year (YoY) growth** when comparing March 2023 vs. March 2022, indicating steady business expansion.
+* **Business Impact:** This 44% surge requires a specialized inventory strategy. Stock levels must be reinforced by late February to prevent **stockouts** and capture this high-revenue window.
+* [View Aggregation Script](./sql/02_monthly_aggregations.sql)
+
+
+
+
 
